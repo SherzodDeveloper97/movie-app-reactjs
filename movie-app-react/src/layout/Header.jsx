@@ -1,15 +1,19 @@
 import { Component } from 'react';
 
 class Header extends Component {
-    state = {  } 
+    state = { 
+        type: "",
+     } 
+
+
     render() { 
         return (
             <header>
                 <div className='header__nav'>
                     <a href="#!" className='brand__logo'>Creative Movie App</a>
                     <ul>
-                        <li><a href="#!">Movies</a></li>
-                        <li><a href="#!">Serials</a></li>
+                        <li><a href="#!" onClick={() => this.setState({type:"movie"})}>Movies</a></li>
+                        <li><a href="#!" onClick={() => this.setState({type:"series"})}>Serials</a></li>
                         <li><a href="#!">Logout</a></li>
                     </ul>
                 </div>  

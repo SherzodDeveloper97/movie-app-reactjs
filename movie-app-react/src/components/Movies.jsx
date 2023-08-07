@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import Movie from './Movie';
+import PageNotFount from './PageNotFount';
 
 class Movies extends Component {
     state = {  } 
@@ -7,9 +8,9 @@ class Movies extends Component {
         const {movies} = this.props;
         return (
             <div className='movies'>
-                {movies.map((movie) => (
+                {movies.length ? movies.map((movie) => (
                     <Movie key={movie.imdbID} {...movie} />
-                ))}
+                )) : <PageNotFount />}
             </div>
         );
     }
